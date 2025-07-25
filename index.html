@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doğanlar Otomotiv - Subaru Yetkili Servis</title>
+  <link rel="icon" type="image/png" href="https://files.catbox.moe/xe687t.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background-color: #363131;
+      color: #f4f4f4;
+      overflow-x: hidden;
+      position: relative;
+    }
+    #particles-js {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+    header {
+      background-color: #0055a0;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .logo img {
+      height: 50px;
+    }
+    nav a {
+      color: white;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+    }
+    nav a.active::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: #3ea6ff;
+      border-radius: 2px;
+    }
+    .hero {
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      padding: 8rem 2rem;
+      background: url('https://files.catbox.moe/jd0gr7.webp') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+      position: relative;
+      z-index: 1;
+    }
+    .hero h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: white;
+      color: #0055a0;
+      font-weight: bold;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background-color: #dbeeff;
+    }
+    section:not(.hero) {
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    section h2 {
+      text-align: center;
+      color: #3ea6ff;
+      margin-bottom: 2rem;
+      font-size: 1.9rem;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .service {
+      background-color: #121212;
+      padding: 1.2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .service:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+    .service h3 {
+      color: #3ea6ff;
+      margin-bottom: 0.5rem;
+    }
+    .service p {
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+    .blog-gallery {
+      text-align: center;
+      margin-top: 3rem;
+      color: #aaa;
+    }
+    .blog-gallery p {
+      color: #aaa;
+    }
+    .faq-question {
+      width: 100%;
+      padding: 1rem;
+      background: #121212;
+      border: none;
+      outline: none;
+      text-align: left;
+      font-weight: bold;
+      color: #3ea6ff;
+      cursor: pointer;
+      border-bottom: 1px solid #333;
+    }
+    .faq-answer {
+      display: none;
+      padding: 1rem;
+      background: #1e1e1e;
+      color: #ccc;
+      line-height: 1.6;
+    }
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+    footer {
+      background-color: #1c1c1c;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      position: relative;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <header>
+    <div class="logo">
+      <img src="https://files.catbox.moe/xe687t.png" alt="Doğanlar Otomotiv Logo"/>
+      <h1>Doğanlar Otomotiv</h1>
+    </div>
+    <nav>
+      <a href="#">Anasayfa</a>
+      <a href="#about">Hakkımızda</a>
+      <a href="#services">Hizmetler</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">İletişim</a>
+      <a href="#faq">SSS</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Subaru Yetkili Servis & Orijinal Yedek Parça</h2>
+    <p>Uzun ömürlü motor kullanımı ve güvenli sürüş için aracınızın bakımını uzman ellerde yaptırın.</p>
+    <a href="#about" class="btn">Hakkımızda</a>
+  </section>
+
+  <section id="about" style="background-color: #0f0f0f; padding: 4rem 2rem;">
+    <div style="max-width: 1000px; margin: auto; text-align: center;">
+      <h2>Hakkımızda</h2>
+      <p style="color: #ccc; font-size: 1.05rem; line-height: 1.6;">
+        Doğanlar Otomotiv 1984 yılında otomotiv sektöründe faaliyete başlamış, 1993 yılında şirketleşmiş ve 1994’te Subaru Yetkili Servis olarak hizmet vermeye başlamıştır.
+        <br><br>
+        Güler yüz, doğru teşhis ve hızlı çözüm ilkesiyle siz değerli müşterilerimize T.S.E 12047 standartlarına uygun hizmet sunmaktayız.
+      </p>
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-around; margin-top: 3rem; gap: 2rem;">
+        <div><h3>🔧 Son Teknoloji Cihazlar</h3><p style="color: #aaa;">Aracınıza en doğru müdahaleyi sağlamak için son teknoloji ekipmanlar kullanıyoruz.</p></div>
+        <div><h3>👨‍🔧 Uzman Ekip</h3><p style="color: #aaa;">Alanında deneyimli ve eğitimli personelimizle en kaliteli hizmeti sunuyoruz.</p></div>
+        <div><h3>📞 7/24 Destek</h3><p style="color: #aaa;">Her zaman ulaşabileceğiniz bir destek hattımız bulunmaktadır.</p></div>
+      </div>
+      <div style="display: flex; justify-content: center; gap: 3rem; margin-top: 4rem; flex-wrap: wrap;">
+        <div><h1 style="color: #3ea6ff;">28+</h1><p style="color: #aaa;">Yıl Deneyim</p></div>
+        <div><h1 style="color: #3ea6ff;">92%</h1><p style="color: #aaa;">Servis Memnuniyeti</p></div>
+        <div><h1 style="color: #3ea6ff;">94%</h1><p style="color: #aaa;">Teslimat Hızı</p></div>
+        <div><h1 style="color: #3ea6ff;">100%</h1><p style="color: #aaa;">Müşteri Memnuniyeti</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2>Hizmetlerimiz</h2>
+    <div class="services-grid">
+      <div class="service"><h3>Yağ & Filtre Değişimi</h3><p>Düzenli bakım ile motorunuzun ömrünü uzatın.</p></div>
+      <div class="service"><h3>Periyodik Bakım</h3><p>Aracınız için rutin kontrol ve parça değişimi.</p></div>
+      <div class="service"><h3>Motul Yağ Değişimi</h3><p>Özel Motul teknolojisiyle profesyonel yağ değişimi.</p></div>
+      <div class="service"><h3>Genel Tamir</h3><p>İsteğe özel arıza tespiti ve mekanik tamirat hizmeti.</p></div>
+      <div class="service"><h3>Araba Yıkama</h3><p>Dış & iç temizlik ile aracınızı yenileyin.</p></div>
+      <div class="service"><h3>Kaporta & Boya</h3><p>Kaporta ve boya onarımları ile aracınız ilk günkü gibi olsun.</p></div>
+      <div class="service"><h3>Hepsiburada Mağaza</h3><p><a href="https://www.hepsiburada.com/magaza/doganlar-otomotiv" target="_blank">Buraya tıklayın</a> ve online ürünlerimizi keşfedin.</p></div>
+      <div class="service"><h3>Lastik Kontrolü</h3><p>Mevsimsel lastik durumu kontrolü ve öneriler.</p></div>
+    </div>
+  </section>
+
+  <section id="blog" class="blog-gallery">
+    <h2>Blog</h2>
+    <p>🚧 Blog bölümü yakında burada olacak. Güncellemeleri takip edin!</p>
+  </section>
+
+  <section id="faq" style="padding: 3rem 2rem; background-color: #0f0f0f; color: #f4f4f4;">
+    <h2 style="text-align: center; color: #3ea6ff; margin-bottom: 2rem; font-size: 1.9rem;">Sıkça Sorulan Sorular (SSS)</h2>
+    <div class="faq-container" style="max-width: 900px; margin: auto;">
+      <div class="faq-item">
+        <button class="faq-question">Subaru aracım için hangi yağları kullanıyorsunuz?</button>
+        <div class="faq-answer">Subaru araçlarınızda Motul ve Subaru orijinal yağları kullanıyoruz. Aracınıza en uygun yağ seçimini servisimizde öğrenebilirsiniz.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Servis randevusu nasıl alabilirim?</button>
+        <div class="faq-answer">Web sitemizdeki iletişim bölümünden veya telefon numaramızdan bize ulaşarak kolayca randevu alabilirsiniz.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Yedek parça garantisi var mı?</button>
+        <div class="faq-answer">Evet, tüm orijinal yedek parçalarımız üretici garantilidir. Detaylı bilgi için servisimize danışabilirsiniz.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Servisinizde hangi ödeme yöntemleri geçerli?</button>
+        <div class="faq-answer">Nakit, kredi kartı ve banka havalesi ile ödeme yapabilirsiniz.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Aracımın bakım süresi ne kadar sürer?</button>
+        <div class="faq-answer">Bakım türüne göre değişmekle birlikte, standart periyodik bakım genellikle aynı gün içinde tamamlanır.</div>
+      </div>
+    </div>
+    <script>
+      document.querySelectorAll('.faq-question').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.faq-item').forEach((item) => {
+            if (item !== btn.parentElement) item.classList.remove('active');
+          });
+          btn.parentElement.classList.toggle('active');
+        });
+      });
+    </script>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Doğanlar Otomotiv. Tüm hakları saklıdır.</p>
+  </footer>
+
+  <script>
+    tsParticles.load("particles-js", {
+      background: { color: { value: "#0c0c0c" } },
+      fpsLimit: 60,
+      particles: {
+        color: { value: "#3ea6ff" },
+        links: { enable: true, color: "#3ea6ff", distance: 150, opacity: 0.4, width: 1 },
+        move: { enable: true, speed: 1 },
+        number: { value: 40 },
+        opacity: { value: 0.3 },
+        shape: { type: "circle" },
+        size: { value: { min: 1, max: 3 } }
+      },
+      detectRetina: true
+    });
+
+    const navLinks = document.querySelectorAll("nav a");
+    const sections = [...document.querySelectorAll("section")];
+
+    window.addEventListener("scroll", () => {
+      const scrollY = window.pageYOffset;
+      sections.forEach((section) => {
+        const offsetTop = section.offsetTop - 120;
+        const offsetBottom = offsetTop + section.offsetHeight;
+        const id = section.getAttribute("id");
+        if (scrollY >= offsetTop && scrollY < offsetBottom) {
+          navLinks.forEach((a) => a.classList.remove("active"));
+          document.querySelector(`nav a[href="#${id}"]`)?.classList.add("active");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
