@@ -589,18 +589,18 @@ section h2 {
   transform: translateY(0);
 }
 
-/* Testimonials */
-.testimonials {
+/* Reviews */
+.reviews {
   margin-top: 3rem;
 }
 
 @media (max-width: 768px) {
-  .testimonials {
+  .reviews {
     margin-top: 2rem;
   }
 }
 
-.testimonials-grid {
+.reviews-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
@@ -608,7 +608,7 @@ section h2 {
 }
 
 @media (max-width: 768px) {
-  .testimonials-grid {
+  .reviews-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
     margin-top: 1.5rem;
